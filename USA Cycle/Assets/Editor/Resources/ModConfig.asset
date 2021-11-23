@@ -11,16 +11,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615501dbe4f3fe94fbf4b564abb10237, type: 3}
   m_Name: ModConfig
   m_EditorClassIdentifier: 
-  id: template
-  title: Template
-  author: 
-  description: 'Flavor text goes here.
+  id: USACycle
+  title: USA Cycle
+  author: me
+  description: '"Your whole miserable country is the size of one state!"
 
 
-    Solving description goes here.
+    Using each state shown, decrypt a word that is present in the Declaration of Independence.
 
 
-    Addition credits can go here.
+    Thanks to Blananas2 for helping with the states on the mod, Danny7007 for making
+    the mod cycle, and TasThing for the graphic in the manual.
 
 
     Manual can be found at ktane.timwi.de or in the manuals folder of your game.
