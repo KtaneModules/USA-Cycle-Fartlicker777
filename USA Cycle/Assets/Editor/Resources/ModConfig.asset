@@ -20,6 +20,9 @@ MonoBehaviour:
     Using each state shown, decrypt a word that is present in the Declaration of Independence.
 
 
+    Happy Thanksgiving everyone!
+
+
     Thanks to Blananas2 for helping with the states on the mod, Danny7007 for making
     the mod cycle, and TasThing for the graphic in the manual.
 
@@ -30,4 +33,4 @@ MonoBehaviour:
     If there are any bugs, contact Fartlicker777#9169 on Discord.'
   version: 
   outputFolder: build
-  previewImage: {fileID: 0}
+  previewImage: {fileID: 2800000, guid: 19a500c63d2d4fb488bd1fe0aa1a0279, type: 3}

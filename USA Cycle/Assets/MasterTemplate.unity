@@ -113,11 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!212 &177939064 stripped
-SpriteRenderer:
-  m_PrefabParentObject: {fileID: 212885997899008890, guid: ad58fc3e7e6e742459324982ce281c18,
-    type: 2}
-  m_PrefabInternal: {fileID: 885095716}
 --- !u!1001 &193053902
 Prefab:
   m_ObjectHideFlags: 0
@@ -186,24 +181,18 @@ Prefab:
       propertyPath: m_Name
       value: USA Cycle (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1469337024565184, guid: ad58fc3e7e6e742459324982ce281c18, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad58fc3e7e6e742459324982ce281c18, type: 2}
   m_IsPrefabParent: 0
---- !u!212 &285495867 stripped
-SpriteRenderer:
-  m_PrefabParentObject: {fileID: 212572939310284318, guid: ad58fc3e7e6e742459324982ce281c18,
-    type: 2}
-  m_PrefabInternal: {fileID: 885095716}
 --- !u!212 &345193043 stripped
 SpriteRenderer:
   m_PrefabParentObject: {fileID: 212572939310284318, guid: ad58fc3e7e6e742459324982ce281c18,
     type: 2}
   m_PrefabInternal: {fileID: 694907925}
---- !u!1 &362928188 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1925250060717264, guid: ad58fc3e7e6e742459324982ce281c18,
-    type: 2}
-  m_PrefabInternal: {fileID: 885095716}
 --- !u!1 &416702558 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1925250060717264, guid: ad58fc3e7e6e742459324982ce281c18,
@@ -277,6 +266,10 @@ Prefab:
       propertyPath: m_Name
       value: USA Cycle (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1469337024565184, guid: ad58fc3e7e6e742459324982ce281c18, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad58fc3e7e6e742459324982ce281c18, type: 2}
   m_IsPrefabParent: 0
@@ -318,31 +311,6 @@ Prefab:
     - target: {fileID: 4024528056397538, guid: ad58fc3e7e6e742459324982ce281c18, type: 2}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114233147616132876, guid: ad58fc3e7e6e742459324982ce281c18,
-        type: 2}
-      propertyPath: french
-      value: 
-      objectReference: {fileID: 2800000, guid: f57ba447e33ca0e49bf436e4a70c4675, type: 3}
-    - target: {fileID: 114233147616132876, guid: ad58fc3e7e6e742459324982ce281c18,
-        type: 2}
-      propertyPath: everyRenderer
-      value: 
-      objectReference: {fileID: 362928188}
-    - target: {fileID: 114233147616132876, guid: ad58fc3e7e6e742459324982ce281c18,
-        type: 2}
-      propertyPath: template
-      value: 
-      objectReference: {fileID: 285495867}
-    - target: {fileID: 114233147616132876, guid: ad58fc3e7e6e742459324982ce281c18,
-        type: 2}
-      propertyPath: yellowBar
-      value: 
-      objectReference: {fileID: 177939064}
-    - target: {fileID: 212572939310284318, guid: ad58fc3e7e6e742459324982ce281c18,
-        type: 2}
-      propertyPath: m_MaskInteraction
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad58fc3e7e6e742459324982ce281c18, type: 2}

@@ -1178,10 +1178,10 @@ MonoBehaviour:
   Bomb: {fileID: 114353176525369230}
   Audio: {fileID: 114587403421344028}
   Flag: {fileID: 1592373665476186}
-  everyRenderer: {fileID: 0}
+  everyRenderer: {fileID: 1925250060717264}
   Module: {fileID: 114931825115191078}
   Submitting: {fileID: 102025469566552690}
-  french: {fileID: 0}
+  french: {fileID: 2800000, guid: f57ba447e33ca0e49bf436e4a70c4675, type: 3}
   InitalButtons:
   - {fileID: 114811679362324082}
   - {fileID: 114173069809319776}
@@ -1237,8 +1237,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: eb4ea0f5f6ade6f41ba8c54e65d291b3, type: 3}
   - {fileID: 21300000, guid: 5c38ea4ab6fdaa94091243b81e9816da, type: 3}
   - {fileID: 21300000, guid: f3ab0307446046441ba043c11d4364b8, type: 3}
-  template: {fileID: 0}
-  yellowBar: {fileID: 0}
+  template: {fileID: 212572939310284318}
+  yellowBar: {fileID: 212885997899008890}
 --- !u!114 &114337907532847840
 MonoBehaviour:
   m_ObjectHideFlags: 1
