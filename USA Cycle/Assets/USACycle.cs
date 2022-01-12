@@ -265,14 +265,117 @@ public class USACycle : MonoBehaviour {
    }
 
 #pragma warning disable 414
-   private readonly string TwitchHelpMessage = @"Use !{0} to do something.";
+   private bool TwitchShouldCancelCommand = false;
+   private readonly string TwitchHelpMessage = @"!{0} cycle [View all states] | !{0} submit <word> [Submit a word]";
 #pragma warning restore 414
 
-   IEnumerator ProcessTwitchCommand (string Command) {
-      yield return null;
-   }
+   IEnumerator ProcessTwitchCommand (string command)
+   {
+        if (Regex.IsMatch(command, @"^\s*cycle\s*$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant))
+        {
+            yield return null;
+            for (int i = 0; i < stateIcons.Count; i+=2)
+            {
+                float curTime = 0f;
+                InitalButtons[0].OnInteract();
+                while (!TwitchShouldCancelCommand && stateIcons[i].transform.localPosition.x > -0.039f || stateIcons[i].transform.localPosition.x < -0.041f) yield return null;
+                InitalButtons[0].OnInteractEnded();
+                if (!TwitchShouldCancelCommand)
+                {
+                    InitalButtons[2].OnInteract();
+                    InitalButtons[2].OnInteractEnded();
+                    while (!TwitchShouldCancelCommand && (curTime += Time.deltaTime) < 2f) yield return null;
+                    InitalButtons[2].OnInteract();
+                    InitalButtons[2].OnInteractEnded();
+                }
+                if (TwitchShouldCancelCommand)
+                {
+                    yield return "sendtochat Sorry {0}, cycle aborted due to a cancel request.";
+                    yield return "cancelled";
+                    yield break;
+                }
+            }
+        }
+        string[] parameters = command.Split(' ');
+        if (Regex.IsMatch(parameters[0], @"^\s*submit\s*$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant))
+        {
+            yield return null;
+            if (parameters.Length > 2)
+                yield return "sendtochaterror Too many parameters!";
+            else if (parameters.Length == 1)
+                yield return "sendtochaterror Please specify a word to submit!";
+            else
+            {
+                for (int i = 0; i < parameters[1].Length; i++)
+                {
+                    if (!Qwerty.Contains(parameters[1].ToUpper()[i]))
+                    {
+                        yield return "sendtochaterror The specified character '" + parameters[1][i] + "' cannot be typed!";
+                        yield break;
+                    }
+                }
+                InitalButtons[1].OnInteract();
+                InitalButtons[1].OnInteractEnded();
+                yield return new WaitForSeconds(0.1f);
+                for (int i = 0; i < parameters[1].Length; i++)
+                {
+                    SubmissionWord += parameters[1].ToUpper()[i].ToString();
+                    Audio.PlaySoundAtTransform("Click", transform);
+                    Submitting.text = SubmissionWord;
+                    yield return new WaitForSeconds(0.1f);
+                }
+                InitalButtons[1].OnInteract();
+                InitalButtons[2].OnInteractEnded();
+                if (!ModuleSolved)
+                {
+                    InitalButtons[2].OnInteract();
+                    InitalButtons[2].OnInteractEnded();
+                }
+            }
+        }
+    }
 
-   IEnumerator TwitchHandleForcedSolve () {
-      yield return null;
-   }
+   IEnumerator TwitchHandleForcedSolve ()
+   {
+        if (!IsSlow)
+        {
+            InitalButtons[0].OnInteractEnded();
+            yield return new WaitForSeconds(0.1f);
+        }
+        if (!InputMode)
+        {
+            InitalButtons[1].OnInteract();
+            InitalButtons[1].OnInteractEnded();
+            yield return new WaitForSeconds(0.1f);
+        }
+        if (SubmissionWord.Length > GoalWord.Length)
+        {
+            InitalButtons[0].OnInteract();
+            InitalButtons[0].OnInteractEnded();
+            yield return new WaitForSeconds(0.1f);
+        }
+        else
+        {
+            for (int i = 0; i < SubmissionWord.Length; i++)
+            {
+                if (SubmissionWord[i] != GoalWord[i])
+                {
+                    InitalButtons[0].OnInteract();
+                    InitalButtons[0].OnInteractEnded();
+                    yield return new WaitForSeconds(0.1f);
+                    break;
+                }
+            }
+        }
+        int start = SubmissionWord.Length;
+        for (int i = start; i < GoalWord.Length; i++)
+        {
+            SubmissionWord += GoalWord[i].ToString();
+            Audio.PlaySoundAtTransform("Click", transform);
+            Submitting.text = SubmissionWord;
+            yield return new WaitForSeconds(0.1f);
+        }
+        InitalButtons[1].OnInteract();
+        InitalButtons[1].OnInteractEnded();
+    }
 }
