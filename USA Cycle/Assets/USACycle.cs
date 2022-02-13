@@ -212,6 +212,7 @@ public class USACycle : MonoBehaviour {
       Transform thisTf = stateIcons[ix].transform;
       float delta = 0;
       while (delta < 1) {
+         yield return null;
          if (buttonHeld != +1) {
             delta += (buttonHeld == -1) ? Time.deltaTime / 2f : Time.deltaTime / 5;
             thisTf.localPosition = new Vector3(Mathf.Lerp(0.12f, -0.12f, delta), -0.0025f, -0.04f);
@@ -220,7 +221,6 @@ public class USACycle : MonoBehaviour {
                StartCoroutine(ScrollState((ix + 1) % stateIcons.Count));
             }
          }
-         yield return null;
       }
    }
 
