@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using UnityEngine;
-using KModkit;
 using Rnd = UnityEngine.Random;
 
 public class USACycle : MonoBehaviour {
@@ -18,6 +17,10 @@ public class USACycle : MonoBehaviour {
 
    public TextMesh Submitting;
    public Texture french;
+
+   //public KMSelectable raiselol;
+   //public GameObject beraisedlol;
+   //bool raised;
 
    public KMSelectable[] InitalButtons;
    public Sprite[] States;
@@ -44,7 +47,7 @@ public class USACycle : MonoBehaviour {
 
    private KeyCode[] TheKeys =
   {
-        //KeyCode.Backspace, KeyCode.Return,
+        /*KeyCode.Backspace, KeyCode.Return,*/
         KeyCode.Q, KeyCode.W, KeyCode.E, KeyCode.R, KeyCode.T, KeyCode.Y, KeyCode.U, KeyCode.I, KeyCode.O, KeyCode.P,
         KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.F, KeyCode.G, KeyCode.H, KeyCode.J, KeyCode.K, KeyCode.L,
         KeyCode.Z, KeyCode.X, KeyCode.C, KeyCode.V, KeyCode.B, KeyCode.N, KeyCode.M
@@ -63,6 +66,8 @@ public class USACycle : MonoBehaviour {
          Button.OnInteractEnded += () => ButtonRelease(Button);
       }
 
+      //raiselol.OnInteract += delegate () { raised = true; beraisedlol.transform.localPosition += new Vector3(0, .03f, 0); return false; };
+
       Module.OnFocus += delegate () { Focused = true; };
       Module.OnDefocus += delegate () { Focused = false; };
 
@@ -76,7 +81,7 @@ public class USACycle : MonoBehaviour {
       do {
          GoalWord = DeclarationOfIndependence.PickRandom();
       } while (GoalWord.Length < 4 || GoalWord.ToUpper().Contains('Q'));
-
+      //GoalWord = "THEN";
       GeneratePuzzle();
       Debug.LogFormat("[USA Cycle #{0}] Version 1.0", ModuleId);
       Debug.LogFormat("[USA Cycle #{0}] The generated word is {1}.", ModuleId, GoalWord);
@@ -100,6 +105,13 @@ public class USACycle : MonoBehaviour {
             }
          }
          StateIndexes.Add(Array.IndexOf(LetterAbbreviations, temp[Rnd.Range(0, temp.Count())]));
+         /*if (i != 3) {
+            StateIndexes.Add(Array.IndexOf(LetterAbbreviations, temp[Rnd.Range(0, temp.Count())]));
+         }
+         else {
+            StateIndexes.Add(22);
+         }*/
+
          temp.Clear();
       }
    }
@@ -255,7 +267,17 @@ public class USACycle : MonoBehaviour {
       }
       if (InputMode) {
          for (int i = 0; i < TheKeys.Count(); i++) {
-            if (Input.GetKeyDown(TheKeys[i]) && Focused) {
+            if (Input.GetKeyDown(KeyCode.Backspace)) {
+               SubmissionWord = SubmissionWord.Substring(0, SubmissionWord.Length - 1);
+               Audio.PlaySoundAtTransform("Click", transform);
+               return;
+            }
+            else if (Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return)) {
+               InitalButtons[1].OnInteract();
+               Audio.PlaySoundAtTransform("Click", transform);
+               return;
+            }
+            else if (Input.GetKeyDown(TheKeys[i]) && Focused) {
                SubmissionWord += Qwerty[i].ToString();
                Audio.PlaySoundAtTransform("Click", transform);
             }

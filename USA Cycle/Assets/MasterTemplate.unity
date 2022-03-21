@@ -113,98 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &86679269
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4024528056397538, guid: ad58fc3e7e6e742459324982ce281c18, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4024528056397538, guid: ad58fc3e7e6e742459324982ce281c18, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4024528056397538, guid: ad58fc3e7e6e742459324982ce281c18, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4024528056397538, guid: ad58fc3e7e6e742459324982ce281c18, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4024528056397538, guid: ad58fc3e7e6e742459324982ce281c18, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4024528056397538, guid: ad58fc3e7e6e742459324982ce281c18, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4024528056397538, guid: ad58fc3e7e6e742459324982ce281c18, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4024528056397538, guid: ad58fc3e7e6e742459324982ce281c18, type: 2}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1469337024565184, guid: ad58fc3e7e6e742459324982ce281c18, type: 2}
-      propertyPath: m_Name
-      value: USA Cycle (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1469337024565184, guid: ad58fc3e7e6e742459324982ce281c18, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: ad58fc3e7e6e742459324982ce281c18, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &885095716
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4024528056397538, guid: ad58fc3e7e6e742459324982ce281c18, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4024528056397538, guid: ad58fc3e7e6e742459324982ce281c18, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4024528056397538, guid: ad58fc3e7e6e742459324982ce281c18, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4024528056397538, guid: ad58fc3e7e6e742459324982ce281c18, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4024528056397538, guid: ad58fc3e7e6e742459324982ce281c18, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4024528056397538, guid: ad58fc3e7e6e742459324982ce281c18, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4024528056397538, guid: ad58fc3e7e6e742459324982ce281c18, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4024528056397538, guid: ad58fc3e7e6e742459324982ce281c18, type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: ad58fc3e7e6e742459324982ce281c18, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &893037767
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,7 +321,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8814ea52310d2614a9feda02ec355ae4, type: 2}
   m_IsPrefabParent: 0
---- !u!1001 &1980887054
+--- !u!1001 &1667654651
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -450,15 +358,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4024528056397538, guid: ad58fc3e7e6e742459324982ce281c18, type: 2}
       propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1469337024565184, guid: ad58fc3e7e6e742459324982ce281c18, type: 2}
-      propertyPath: m_Name
-      value: USA Cycle (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1469337024565184, guid: ad58fc3e7e6e742459324982ce281c18, type: 2}
-      propertyPath: m_IsActive
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad58fc3e7e6e742459324982ce281c18, type: 2}
